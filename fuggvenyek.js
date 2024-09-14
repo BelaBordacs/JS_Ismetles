@@ -15,23 +15,7 @@ export function cimKiiras(cim){
 }
 
 
-/* függvény, amivel az 1. kutya adatait írhatjuk ki a tartalom nevű class-ba divben legyen, 
-a név, h3-as címben a kor p, nem p tag-ben*/
 
-export function egyKutyaKiiras(kutya){
-    const divElem = $(".tartalom")
-    divElem.append(`<div class ="col-lg-4 col-md-6 card">
-                        <div class="card-body">
-                            <h3 class="card-title">${kutya.nev}</h3> 
-                            <p class="card-text">kor: ${kutya.kor}</p>
-                            <p class="card-text">nem: ${kutya.nem}</p> 
-                            <button type="button" class="kivalaszt btn btn-light">Örökbefogad</button>   
-                        </div>
-                    </div>`)    
-
-    }
-
-//listával adjuk meg
 
 
 

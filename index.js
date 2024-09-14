@@ -1,8 +1,8 @@
-import { cimKiiras, egyKutyaKiiras } from "./fuggvenyek.js";
 import { kutyaLista } from "./adatok.js";
+import Kartyak from "./Kartyak.js";
 
-let nev = "Dézi";
-const cim = "Kutyák minden mennyiségben";
+/*let nev = "Dézi";
+const cim = "Kutyák minden mennyiségben";*/
 
 // objektum -> összetett adatszerkezetek esetén
 // egy kutya adata
@@ -34,26 +34,20 @@ console.log("Cím: ", cim) */
 // csak azonos típusú adatok lehetnek
 //const-al hozzk létre, hogy ne tudjuk a teles elemet felülírni, az elemek változtathatók ettől
 
-const nevlista = ["Dézi", "Jenő", "Béla"]
+/*const nevlista = ["Dézi", "Jenő", "Béla"]
 const szamlista = [5, 3,4,23,-34.2]
 nevlista[0] = "Floki"
 console.log(nevlista)
+cimKiiras(cim)*/
 
-cimKiiras(cim)
+const divElem = $(".tartalom")
 
-kutyaLista.forEach(kutya => {   
-    egyKutyaKiiras(kutya);
-});
+new Kartyak(kutyaLista, divElem)
 
 /* másik megoldás: 
 for (let index = 0; index < kutyaLista.length; index++) {
     egyKutyaKiiras(kutyaLista[index])
 } */
 
-// eseménykezelő a gombokhoz -> kattintással történjen valami
 
-const gombElem = $(".kivalaszt")
-gombElem.on("click", ()=>{
-    console.log(event.target) // az az elem ami kiváltotta az eseményt
-})
 
