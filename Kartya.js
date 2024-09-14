@@ -20,7 +20,10 @@ constructor(kutya, szuloElem){
     // eseménykezelő a gombokhoz -> kattintással történjen valami
     
     this.gombElem.on("click", ()=>{
-        console.log(event.target) // az az elem ami kiváltotta az eseményt
+        console.log(this) // az az elem ami kiváltotta az eseményt
+        //létrehozunk egy saját eseményt
+        const e=new CustomEvent("kivalaszt", {detail:this.#kutya})
+        window.dispatchEvent(e)
     })
 }
 

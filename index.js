@@ -40,7 +40,9 @@ nevlista[0] = "Floki"
 console.log(nevlista)
 cimKiiras(cim)*/
 
+const kivalasztottLista=[];
 const divElem = $(".tartalom")
+const kivElem = $(".kivalasztottak")
 
 new Kartyak(kutyaLista, divElem)
 
@@ -50,4 +52,18 @@ for (let index = 0; index < kutyaLista.length; index++) {
 } */
 
 
+
+// melyik kártyára kattintottunk? Az adatait tegyük bele a listába
+/*ha el akarunk érni privát adattagot: 
+1. getter az osztályban
+Meg kell íni a gettert
+A probblémáa -> gettert akkor kéne meghívni, ha rákattintunk a gombra.
+feliratkozunk a saját eseményünkre
+*/
+$(window).on("kivalaszt",(event)=>{
+    console.log(event.detail) //event.detail - ezt adtamá át a saját eseménynél, az adott kártyához tartozó kutya adata
+    kivalasztottLista.push(event.detail)
+    console.log(kivalasztottLista)
+    new Kartyak(kivalasztottLista, kivElem)
+})
 
